@@ -1,0 +1,7 @@
+FROM nginx:1.31-alpine-slim
+RUN rm -rf /usr/share/nginx/html/*
+COPY index.html /usr/share/nginx/html/
+EXPOSE 80
+RUN chown -R nginx:nginx /usr/share/nginx/html/
+RUN nginx
+CMD ["nginx", "-g", "daemon off;"]
