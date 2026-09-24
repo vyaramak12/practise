@@ -1,0 +1,5 @@
+FROM httpd:alpine3.24
+RUN rm -rf /usr/local/apache2/htdocs/*
+COPY index.html /usr/local/apache2/htdocs/
+EXPOSE 8000
+cmd ["httpd-foreground"]
